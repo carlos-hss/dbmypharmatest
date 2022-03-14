@@ -62,7 +62,7 @@ router.patch("/:id", getBrand, async (req, res) => {
 router.delete("/:id", getBrand, async (req, res) => {
     try {
         await res.brand.remove();
-        res.json({ message: "Marca Deletada." });
+        res.json({ message: `Marca "${res.brand.name}" Deletada.` });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

@@ -38,6 +38,7 @@ router.get("/:id", getCategory, (req, res) => {
 router.post("/", async (req, res) => {
     const category = new Category({
         name: req.body.name,
+        description: req.body.description,
     });
 
     try {
@@ -67,7 +68,7 @@ router.patch("/:id", getCategory, async (req, res) => {
 router.delete("/:id", getCategory, async (req, res) => {
     try {
         await res.category.remove();
-        res.json({ message: "Categoria Deletada." });
+        res.json({ message: `Categoria "${res.category.name}" Deletada.` });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
