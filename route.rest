@@ -10,7 +10,7 @@ POST http://localhost:3000/products HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Paracetamol",
+    "name": "Paracetabem",
     "description": "Usado para curar",
     "price": 150,
     "inventory": 16,
