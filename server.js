@@ -10,7 +10,7 @@ console.log(PORT);
 
 app.use(express.json());
 
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect("mongodb://localhost/mypharmatest", {
     useNewUrlParser: true,
 });
 
