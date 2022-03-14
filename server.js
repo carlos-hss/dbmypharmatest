@@ -11,12 +11,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(
-    "mongodb+srv://dev:OjGhKZbDWwmKtm5f@cluster0.m5gh0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    {
-        useNewUrlParser: true,
-    }
-);
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+});
 
 const db = mongoose.connection;
 
