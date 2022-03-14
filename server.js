@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -12,8 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
-    process.env.DATABASE_URL ||
-        "mongodb+srv://dev:OjGhKZbDWwmKtm5f@cluster0.m5gh0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "mongodb+srv://dev:OjGhKZbDWwmKtm5f@cluster0.m5gh0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
         useNewUrlParser: true,
     }
