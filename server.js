@@ -21,7 +21,12 @@ const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to Database"));
 
+// ROUTERS
+
 const productsRouter = require("./routes/products");
-app.use("/products", productsRouter);
+app.use("/produtos", productsRouter);
+
+const brandsRouter = require("./routes/brands");
+app.use("/marcas", brandsRouter);
 
 app.listen(port);
