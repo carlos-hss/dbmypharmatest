@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -27,4 +27,4 @@ db.once("open", () => console.log("Connected to Database"));
 const productsRouter = require("./routes/products");
 app.use("/products", productsRouter);
 
-app.listen(PORT);
+app.listen(port);
