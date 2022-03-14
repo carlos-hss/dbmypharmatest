@@ -10,12 +10,12 @@ POST http://localhost:3000/products HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Carlos1",
-    "description": "Carlos2",
+    "name": "Paracetamol",
+    "description": "Usado para curar",
     "price": 150,
     "inventory": 16,
-    "category": "Carlos3",
-    "brand": "Carlos4"
+    "category": "Medicamentos",
+    "brand": "Cimed"
 }
 
 ###
