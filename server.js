@@ -1,4 +1,4 @@
-require("dotenv").config({ path: ".env" });
+require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
@@ -11,9 +11,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true,
-});
+mongoose.connect(
+    "mongodb+srv://dev:OjGhKZbDWwmKtm5f@cluster0.m5gh0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    {
+        useNewUrlParser: true,
+    }
+);
 
 const db = mongoose.connection;
 
