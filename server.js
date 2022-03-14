@@ -29,4 +29,7 @@ app.use("/produtos", productsRouter);
 const brandsRouter = require("./routes/brands");
 app.use("/marcas", brandsRouter);
 
+const categoriesRouter = require("./routes/categories");
+app.use("/categorias", categoriesRouter);
+
 app.listen(port);

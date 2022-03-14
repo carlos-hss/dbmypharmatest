@@ -9,7 +9,7 @@ const getBrand = async (req, res, next) => {
     try {
         brand = await Brand.findById(req.params.id);
         if (brand == null) {
-            return res.status(404).json({ message: "Cannot find brand" });
+            return res.status(404).json({ message: "Marca não encontrada." });
         }
     } catch (err) {
         return res.status(500).json({ message: err.message });
@@ -62,7 +62,7 @@ router.patch("/:id", getBrand, async (req, res) => {
 router.delete("/:id", getBrand, async (req, res) => {
     try {
         await res.brand.remove();
-        res.json({ message: "Deleted Brand" });
+        res.json({ message: "Marca Deletada." });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
