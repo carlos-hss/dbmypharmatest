@@ -33,6 +33,6 @@ const categoriesRouter = require("./routes/categories");
 app.use("/categorias", categoriesRouter);
 
 const usersRouter = require("./routes/users");
-app.use("/usuario", usersRouter);
+app.use("/usuarios", usersRouter);
 
 app.listen(port);
