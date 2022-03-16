@@ -48,23 +48,4 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.patch("/:id", getUser, async (req, res) => {
-    if (req.body.name != null) {
-        res.user.name = req.body.name;
-    }
-    if (req.body.email != null) {
-        res.user.email = req.body.email;
-    }
-    if (req.body.password != null) {
-        res.user.password = req.body.password;
-    }
-
-    try {
-        const editUser = await res.user.save();
-        res.json(editUser);
-    } catch (err) {
-        res.status(400).json({ message: err.message });
-    }
-});
-
 module.exports = router;
