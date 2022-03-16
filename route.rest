@@ -20,7 +20,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/produtos/622f602d8509f6935c0a5973 HTTP/1.1
+DELETE http://localhost:3000/usuarios/62317941e305c56555651573 HTTP/1.1
 
 ###
 
