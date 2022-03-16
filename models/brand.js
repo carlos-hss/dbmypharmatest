@@ -13,9 +13,6 @@ const brandSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-    },
-    {
-        versionKey: false,
     }
 );
 
