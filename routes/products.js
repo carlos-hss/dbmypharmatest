@@ -88,4 +88,78 @@ router.delete("/:id", getProduct, async (req, res) => {
     }
 });
 
+//FILTROS
+
+router.get("/filtros/nome-a-z", async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products.sort((a, b) => a.name - b.name));
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+router.get("/filtros/nome-z-a", async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products.sort((a, b) => b.name - a.name));
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+router.get("/filtros/marca-a-z", async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products.sort((a, b) => a.brand - b.brand));
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+router.get("/filtros/marca-z-a", async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products.sort((a, b) => b.brand - a.brand));
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+router.get("/filtros/categoria-a-z", async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products.sort((a, b) => a.category - b.category));
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+router.get("/filtros/categoria-z-a", async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products.sort((a, b) => b.category - a.category));
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+router.get("/:search", async (req, res) => {
+    const search = req.params.search.toLowerCase();
+    try {
+        const products = await Product.find();
+        res.json(
+            products.filter(
+                (product) =>
+                    product.name.toLowerCase().includes(search) ||
+                    product.description.toLowerCase().includes(search) ||
+                    product.brand.toLowerCase().includes(search) ||
+                    product.category.toLowerCase().includes(search)
+            )
+        );
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 module.exports = router;

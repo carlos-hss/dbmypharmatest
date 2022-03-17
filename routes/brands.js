@@ -68,4 +68,18 @@ router.delete("/:id", getBrand, async (req, res) => {
     }
 });
 
+//FILTERS
+
+router.get("/:search", async (req, res) => {
+    const search = req.params.search.toLowerCase();
+    try {
+        const brands = await Brand.find();
+        res.json(
+            brands.filter((brand) => brand.name.toLowerCase().includes(search))
+        );
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 module.exports = router;

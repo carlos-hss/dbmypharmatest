@@ -74,4 +74,40 @@ router.delete("/:id", getCategory, async (req, res) => {
     }
 });
 
+//FILTROS
+
+router.get("/filtros/nome-a-z", async (req, res) => {
+    try {
+        const categories = await Category.find();
+        res.json(categories.sort((a, b) => a.name - b.name));
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+router.get("/filtros/nome-z-a", async (req, res) => {
+    try {
+        const categories = await Category.find();
+        res.json(categories.sort((a, b) => b.name - a.name));
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+router.get("/:search", async (req, res) => {
+    const search = req.params.search.toLowerCase();
+    try {
+        const categories = await Category.find();
+        res.json(
+            categories.filter(
+                (category) =>
+                    category.name.toLowerCase().includes(search) ||
+                    category.description.toLowerCase().includes(search)
+            )
+        );
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 module.exports = router;
