@@ -29,10 +29,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/:id", getBrand, (req, res) => {
-    res.send(res.brand);
-});
-
 router.post("/", async (req, res) => {
     const brand = new Brand({
         name: req.body.name,

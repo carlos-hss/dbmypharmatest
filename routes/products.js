@@ -29,10 +29,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/:id", getProduct, (req, res) => {
-    res.send(res.product);
-});
-
 router.post("/", async (req, res) => {
     const product = new Product({
         name: req.body.name,

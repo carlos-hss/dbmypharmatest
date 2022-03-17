@@ -31,10 +31,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/:id", getCategory, (req, res) => {
-    res.send(res.category);
-});
-
 router.post("/", async (req, res) => {
     const category = new Category({
         name: req.body.name,
