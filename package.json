@@ -3,8 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon index.js --ignore __tests__",
-        "test": "jest"
+        "start": "nodemon index.js"
     },
     "repository": {
         "type": "git",
@@ -17,17 +16,12 @@
     },
     "homepage": "https://github.com/carlos-hss/dbmypharmatest#readme",
     "dependencies": {
-        "@shelf/jest-mongodb": "^2.2.1",
-        "axios": "^0.26.1",
         "cors": "^2.8.5",
         "express": "^4.17.3",
-        "jest": "^27.5.1",
         "mongoose": "^6.2.6",
-        "supertest": "^6.2.2",
         "uuid": "^8.3.2"
     },
     "devDependencies": {
-        "dotenv": "^16.0.0",
         "nodemon": "^2.0.15"
     },
     "description": ""
