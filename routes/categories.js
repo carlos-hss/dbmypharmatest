@@ -75,7 +75,18 @@ router.delete("/:id", getCategory, async (req, res) => {
 router.get("/filtros/nome-a-z", async (req, res) => {
     try {
         const categories = await Category.find();
-        res.json(categories.sort((a, b) => a.name - b.name));
+        const sortedArray = categories.sort((a, b) => {
+            const category1 = a.name.toUpperCase();
+            const category2 = b.name.toUpperCase();
+            if (category1 < category2) {
+                return -1;
+            }
+            if (category1 > category2) {
+                return 1;
+            }
+            return 0;
+        });
+        res.json(sortedArray);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -84,7 +95,18 @@ router.get("/filtros/nome-a-z", async (req, res) => {
 router.get("/filtros/nome-z-a", async (req, res) => {
     try {
         const categories = await Category.find();
-        res.json(categories.sort((a, b) => b.name - a.name));
+        const sortedArray = categories.sort((a, b) => {
+            const category1 = a.name.toUpperCase();
+            const category2 = b.name.toUpperCase();
+            if (category1 < category2) {
+                return 1;
+            }
+            if (category1 > category2) {
+                return -1;
+            }
+            return 0;
+        });
+        res.json(sortedArray);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
