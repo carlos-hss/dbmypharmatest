@@ -78,12 +78,8 @@ router.get("/filtros/nome-a-z", async (req, res) => {
         const sortedArray = categories.sort((a, b) => {
             const category1 = a.name.toUpperCase();
             const category2 = b.name.toUpperCase();
-            if (category1 < category2) {
-                return -1;
-            }
-            if (category1 > category2) {
-                return 1;
-            }
+            if (category1 < category2) return -1;
+            if (category1 > category2) return 1;
             return 0;
         });
         res.json(sortedArray);
@@ -98,12 +94,8 @@ router.get("/filtros/nome-z-a", async (req, res) => {
         const sortedArray = categories.sort((a, b) => {
             const category1 = a.name.toUpperCase();
             const category2 = b.name.toUpperCase();
-            if (category1 < category2) {
-                return 1;
-            }
-            if (category1 > category2) {
-                return -1;
-            }
+            if (category1 < category2) return 1;
+            if (category1 > category2) return -1;
             return 0;
         });
         res.json(sortedArray);

@@ -92,12 +92,8 @@ router.get("/filtros/nome-a-z", async (req, res) => {
         const sortedArray = products.sort((a, b) => {
             const product1 = a.name.toUpperCase();
             const product2 = b.name.toUpperCase();
-            if (product1 < product2) {
-                return -1;
-            }
-            if (product1 > product2) {
-                return 1;
-            }
+            if (product1 < product2) return -1;
+            if (product1 > product2) return 1;
             return 0;
         });
         res.json(sortedArray);
@@ -112,12 +108,8 @@ router.get("/filtros/nome-z-a", async (req, res) => {
         const sortedArray = products.sort((a, b) => {
             const product1 = a.name.toUpperCase();
             const product2 = b.name.toUpperCase();
-            if (product1 < product2) {
-                return 1;
-            }
-            if (product1 > product2) {
-                return -1;
-            }
+            if (product1 < product2) return 1;
+            if (product1 > product2) return -1;
             return 0;
         });
         res.json(sortedArray);
@@ -132,12 +124,8 @@ router.get("/filtros/marca-a-z", async (req, res) => {
         const sortedArray = products.sort((a, b) => {
             const product1 = a.brand.toUpperCase();
             const product2 = b.brand.toUpperCase();
-            if (product1 < product2) {
-                return -1;
-            }
-            if (product1 > product2) {
-                return 1;
-            }
+            if (product1 < product2) return -1;
+            if (product1 > product2) return 1;
             return 0;
         });
         res.json(sortedArray);
@@ -152,12 +140,8 @@ router.get("/filtros/marca-z-a", async (req, res) => {
         const sortedArray = products.sort((a, b) => {
             const product1 = a.brand.toUpperCase();
             const product2 = b.brand.toUpperCase();
-            if (product1 < product2) {
-                return 1;
-            }
-            if (product1 > product2) {
-                return -1;
-            }
+            if (product1 < product2) return 1;
+            if (product1 > product2) return -1;
             return 0;
         });
         res.json(sortedArray);
@@ -172,12 +156,8 @@ router.get("/filtros/categoria-a-z", async (req, res) => {
         const sortedArray = products.sort((a, b) => {
             const product1 = a.category.toUpperCase();
             const product2 = b.category.toUpperCase();
-            if (product1 < product2) {
-                return -1;
-            }
-            if (product1 > product2) {
-                return 1;
-            }
+            if (product1 < product2) return -1;
+            if (product1 > product2) return 1;
             return 0;
         });
         res.json(sortedArray);
@@ -192,12 +172,8 @@ router.get("/filtros/categoria-z-a", async (req, res) => {
         const sortedArray = products.sort((a, b) => {
             const product1 = a.category.toUpperCase();
             const product2 = b.category.toUpperCase();
-            if (product1 < product2) {
-                return 1;
-            }
-            if (product1 > product2) {
-                return -1;
-            }
+            if (product1 < product2) return 1;
+            if (product1 > product2) return -1;
             return 0;
         });
         res.json(sortedArray);
